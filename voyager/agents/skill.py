@@ -13,7 +13,7 @@ from voyager.control_primitives import load_control_primitives
 class SkillManager:
     def __init__(
         self,
-        model_name="gpt-3.5-turbo",
+        model_name="glm-5.1",
         temperature=0,
         retrieval_top_k=5,
         request_timout=120,
@@ -24,6 +24,7 @@ class SkillManager:
             model_name=model_name,
             temperature=temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
         U.f_mkdir(f"{ckpt_dir}/skill/code")
         U.f_mkdir(f"{ckpt_dir}/skill/description")

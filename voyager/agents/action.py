@@ -14,7 +14,7 @@ from voyager.control_primitives_context import load_control_primitives_context
 class ActionAgent:
     def __init__(
         self,
-        model_name="gpt-3.5-turbo",
+        model_name="glm-5.1",
         temperature=0,
         request_timout=120,
         ckpt_dir="ckpt",
@@ -35,6 +35,7 @@ class ActionAgent:
             model_name=model_name,
             temperature=temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
 
     def update_chest_memory(self, chests):
@@ -83,7 +84,7 @@ class ActionAgent:
             "smeltItem",
             "killMob",
         ]
-        if not self.llm.model_name == "gpt-3.5-turbo":
+        if not self.llm.model_name == "glm-5.1":
             base_skills += [
                 "useChest",
                 "mineflayer",

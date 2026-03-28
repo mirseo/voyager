@@ -15,9 +15,9 @@ from langchain.vectorstores import Chroma
 class CurriculumAgent:
     def __init__(
         self,
-        model_name="gpt-3.5-turbo",
+        model_name="glm-5.1",
         temperature=0,
-        qa_model_name="gpt-3.5-turbo",
+        qa_model_name="glm-5.1",
         qa_temperature=0,
         request_timout=120,
         ckpt_dir="ckpt",
@@ -30,11 +30,13 @@ class CurriculumAgent:
             model_name=model_name,
             temperature=temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
         self.qa_llm = ChatOpenAI(
             model_name=qa_model_name,
             temperature=qa_temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
         assert mode in [
             "auto",
