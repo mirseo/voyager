@@ -30,11 +30,13 @@ class CurriculumAgent:
             model_name=model_name,
             temperature=temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
         self.qa_llm = ChatOpenAI(
             model_name=qa_model_name,
             temperature=qa_temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
         assert mode in [
             "auto",

@@ -16,6 +16,7 @@ class CriticAgent:
             model_name=model_name,
             temperature=temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
         assert mode in ["auto", "manual"]
         self.mode = mode

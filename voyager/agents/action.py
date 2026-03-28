@@ -35,6 +35,7 @@ class ActionAgent:
             model_name=model_name,
             temperature=temperature,
             request_timeout=request_timout,
+            openai_api_base="https://api.z.ai/api/coding/paas/v4"
         )
 
     def update_chest_memory(self, chests):
